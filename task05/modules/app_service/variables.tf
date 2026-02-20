@@ -27,3 +27,13 @@ variable "tags" {
   type        = map(string)
   description = "A mapping of tags to assign to the Windows Web App resource."
 }
+
+variable "ip_restrictions" {
+  type = list(object({
+    name        = string
+    ip_address  = string
+    service_tag = string
+    priority    = number
+  }))
+  description = "List of IP restrictions to apply to the Web App"
+}

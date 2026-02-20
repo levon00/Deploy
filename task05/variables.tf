@@ -39,3 +39,18 @@ variable "common_tags" {
   type        = map(string)
   description = "Common tags for resources"
 }
+
+variable "ip_restriction_name_ip" {
+  type        = string
+  description = "Name for the allow-ip restriction rule"
+}
+
+variable "ip_restriction_name_tm" {
+  type        = string
+  description = "Name for the allow-tm restriction rule"
+}
+
+variable "tm_routing_method" {
+  type        = string
+  description = "Routing method for Traffic Manager"
+}

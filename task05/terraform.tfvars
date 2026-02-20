@@ -35,3 +35,7 @@ app_services = {
 traffic_manager_name = "cmaz-0sj5vwga-mod5-traf"
 verification_ip      = "18.153.146.156"
 common_tags          = { Creator = "levon_khalatyan@epam.com" }
+
+ip_restriction_name_ip = "allow-ip"
+ip_restriction_name_tm = "allow-tm"
+tm_routing_method      = "Performance"

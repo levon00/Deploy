@@ -29,6 +29,21 @@ module "app_services" {
   service_plan_id = module.app_service_plans[each.value.plan_key].id
   verification_ip = var.verification_ip
   tags            = var.common_tags
+
+  ip_restrictions = [
+    {
+      name        = var.ip_restriction_name_ip
+      ip_address  = "${var.verification_ip}/32"
+      service_tag = null
+      priority    = 100
+    },
+    {
+      name        = var.ip_restriction_name_tm
+      ip_address  = null
+      service_tag = "AzureTrafficManager"
+      priority    = 110
+    }
+  ]
 }
 
 module "traffic_manager" {
