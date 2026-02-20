@@ -49,9 +49,10 @@ module "app_services" {
 module "traffic_manager" {
   source = "./modules/traffic_manager"
 
-  name    = var.traffic_manager_name
-  rg_name = module.resource_groups["rg3"].name
-  tags    = var.common_tags
+  name           = var.traffic_manager_name
+  rg_name        = module.resource_groups["rg3"].name
+  tags           = var.common_tags
+  routing_method = var.tm_routing_method # Pass the variable here
 
   endpoints = {
     for k, v in module.app_services : k => {

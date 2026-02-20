@@ -1,3 +1,9 @@
+variable "routing_method" {
+  type        = string
+  description = "The traffic routing method for the Traffic Manager profile (e.g., Performance, Weighted, etc.)."
+}
+
+# Keep your existing variables below:
 variable "name" {
   type        = string
   description = "The name of the Traffic Manager profile."
@@ -10,7 +16,7 @@ variable "rg_name" {
 
 variable "tags" {
   type        = map(string)
-  description = "A mapping of tags to assign to the Traffic Manager profile and its endpoints."
+  description = "A mapping of tags to assign to the Traffic Manager profile."
 }
 
 variable "endpoints" {
